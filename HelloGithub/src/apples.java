@@ -30,7 +30,7 @@ public class apples {
 	public String getAddress() {
 		return String.format("%s, %s", address, city);
 	}
-	public int getAddresses() {
+	public static int getAddresses() {
 		return addresses;
 	}
 }
