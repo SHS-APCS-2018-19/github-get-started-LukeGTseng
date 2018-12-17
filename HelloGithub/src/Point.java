@@ -4,6 +4,7 @@ public class Point {
 	public Point(int x, int y) {
 		this.x = x;
 		this.y = y;
+		System.out.printf("Coordinates: %s\n", getCoord());
 	}
 	public double distance(Point moo) { //formula: square root of (x2-x1) squared + (y2-y1) squared;
 		double distance = Math.sqrt(Math.pow(moo.x-this.x,2)+ Math.pow(moo.y-this.y,2));
@@ -14,5 +15,8 @@ public class Point {
 	}
 	public int getY() {
 		return y;
+	}
+	public String getCoord() {
+		return String.format("(%d, %d)", x, y);
 	}
 }
