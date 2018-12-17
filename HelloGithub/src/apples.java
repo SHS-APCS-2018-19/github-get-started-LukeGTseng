@@ -15,8 +15,15 @@ public class apples {
 		this.city = city;
 		System.out.printf("Your address is %s\n", this);
 	}
-	public apples(int day, int month, int year) {
-		
+	public apples(String name, int month, int day, int year) {
+		this.day = day;
+		this.name = name;
+		this.month = month;
+		this.year = year;
+		System.out.printf("%s's birthday is %s\n", returnName(), birthday());
+	}
+	public String birthday() {
+		return String.format("%d/%d/%d", month, day, year);
 	}
 	public String returnName() {
 		return String.format("%s", name);
