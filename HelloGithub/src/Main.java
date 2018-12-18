@@ -6,8 +6,8 @@ public class Main {
 		Point a = new Point(s.nextInt(),s.nextInt());
 		System.out.println("Type in the second coordinate point: ");
 		Point b = new Point(s.nextInt(),s.nextInt());
-		System.out.println(a.polarCoord());
-		System.out.println(b.polarCoord());
-		System.out.println(Point.distance(a,b));
+		System.out.println("Distance: " + Point.distance(a,b)); //distance
+		Point.slopeTo(a,b); //slope
+		Point.midpointTo(a,b); //midpoint
 	}
 }
