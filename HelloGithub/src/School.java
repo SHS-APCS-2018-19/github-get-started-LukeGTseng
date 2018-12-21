@@ -20,17 +20,7 @@ public class School {
 		newSchool.addRoom();
 		System.out.println("Enter the Period: ");
 		newSchool.addPeriod();
-		Scanner in = new Scanner(System.in);
-		while (in.hasNextLine() && isClassFull() == false) {
-			System.out.println("Do you want to add a student? Type \"yes\" or \"no\".");
-			if (in.nextLine().equals("yes")) {
-				newSchool.addStudent();
-			} else if (in.nextLine().equals("no")) {
-				break;
-			} else {
-				System.out.println("Invalid input. Try Again.");
-			}
-		}
+
 		return newSchool;
 	}
 
@@ -51,18 +41,22 @@ public class School {
 	}
 
 	public void addStudent() {
-		list.add(s.nextLine());
-		students = list.toArray(new String[list.size()]);
+		if (isClassFull() == false) {
+			list.add(s.nextLine());
+			students = list.toArray(new String[list.size()]);
+		}
+
 	}
+
 	public static boolean isClassFull() {
-		if(students == null) {
-			return true;
-		
-		}else if (students != null && students.length < MAX_CLASS_SIZE) {
-			return true;
+		if (students == null) {
+			return false;
+
+		} else if (students != null && students.length < MAX_CLASS_SIZE) {
+			return false;
 		} else {
 			System.out.println("Class Full!");
-			return false;
+			return true;
 		}
 	}
 
