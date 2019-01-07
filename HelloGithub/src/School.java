@@ -1,15 +1,17 @@
 import java.util.*;
 
 public class School {
-	// field for all variables
+// field for all variables
 	private String courseName;
 	private String teacherName;
 	private int roomNumber;
 	private int period;
 	private static int numOfCourses;
-	private final static int MAX_CLASS_SIZE = 30;
+	private final static int MAX_CLASS_SIZE = 3;
 	private String[] students;
+	private static String[] allStudents;
 	ArrayList<String> list = new ArrayList<String>();
+	static ArrayList<String> list2 = new ArrayList<String>();
 	Scanner s = new Scanner(System.in);
 
 	public static School readFromInput() { // class information input method
@@ -26,7 +28,7 @@ public class School {
 		return newSchool;
 	}
 
-	// input methods for everything
+// input methods for everything
 	public void addCourse() {
 		courseName = s.nextLine();
 	}
@@ -45,12 +47,32 @@ public class School {
 
 	public void addStudent(School school) {
 		Scanner studentNameInput = new Scanner(System.in);
-		if (isClassFull(school) == false) { // checking if class is full by using the method that checks the amount of students
+		if (isClassFull(school) == false) { // checking if class is full by using the method that checks the amount of
+											// students
 			System.out.println("Enter Student's Name: ");
-			list.add(studentNameInput.nextLine());
+			String student = studentNameInput.nextLine();
+			list.add(student);
 			students = list.toArray(new String[list.size()]); // shout out to IMLame for the help
+			addAllStudents(student);
 		}
+	}
 
+	public static void addAllStudents(String student) {
+		if (allStudents == null) {
+			list2.add(student);
+			allStudents = list2.toArray(new String[list2.size()]);
+		} else {
+			int check = 0;
+			for (int i = 0; i < allStudents.length; i++) {
+				if (allStudents[i].equals(student)) {
+					check++;
+				}
+			}
+			if(check == 0) {
+				list2.add(student);
+				allStudents = list2.toArray(new String[list2.size()]);
+			}
+		}
 	}
 
 	public static int getTotalCourses() {
@@ -74,7 +96,11 @@ public class School {
 	}
 
 	public String[] getStudents() {
-		return students; // used to find the period
+		return students;
+	}
+
+	public static String[] getAllStudents() {
+		return allStudents;
 	}
 
 	public void printClassFormat(School schools) { // format for printing out class details
@@ -98,7 +124,8 @@ public class School {
 	public static boolean isClassFull(School school) {
 		if (school.getStudents() == null) { // checking if array is empty
 			return false;
-		} else if (school.getStudents() != null && school.getStudents().length < MAX_CLASS_SIZE) { // testing if its in class size range
+		} else if (school.getStudents() != null && school.getStudents().length < MAX_CLASS_SIZE) { // testing if its in
+																									// class size range
 			return false;
 		} else {
 			System.out.println("Class Full!");
