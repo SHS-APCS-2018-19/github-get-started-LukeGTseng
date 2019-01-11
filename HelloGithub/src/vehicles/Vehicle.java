@@ -44,9 +44,6 @@ public class Vehicle {
 		speed -= s;
 		System.out.printf("Speed now at %d mph\n", speed);
 	}
-	public Boolean getStatus() {
-		return onOff;
-	}
 	public static int getNumOfVehicles() {
 		return numOfVehicles;
 	}
