@@ -1,9 +1,9 @@
 
 public class Car extends Vehicle {
-	public static int increment = 1;
-	public static String licensePlateCar = "C" + increment;
+	static int increment = 1;
+
 	public Car() {
-		super(licensePlateCar);
+		super("C" + increment);
 		increment += 2;
 	}
 
