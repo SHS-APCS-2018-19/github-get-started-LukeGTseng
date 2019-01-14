@@ -1,9 +1,8 @@
 
 public class Truck extends Vehicle {
 	static int increment = 2;
-	static String licensePlateTruck = "T" + increment;
 	public Truck() {
-		super(licensePlateTruck);
+		super("T" + increment);
 		increment += 2;
 	}
 	public static Truck readFromInput() {
