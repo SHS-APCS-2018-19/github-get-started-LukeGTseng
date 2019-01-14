@@ -4,9 +4,12 @@ public class Vehicle {
 	static int numOfVehicles = 0;
 	Scanner s = new Scanner(System.in);
 	String licensePlate;
-	
+	static ArrayList<String> list = new ArrayList<String>();
+	private static String[] allPlates;
 	public Vehicle(String licensePlate) {
 		this.licensePlate = licensePlate;
+		list.add(licensePlate);
+		allPlates = list.toArray(new String[list.size()]);
 		System.out.println(licensePlate);
 	}
 	
@@ -47,4 +50,5 @@ public class Vehicle {
 	public static int getNumOfVehicles() {
 		return numOfVehicles;
 	}
+
 }
