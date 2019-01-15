@@ -12,10 +12,25 @@ public class Car extends Vehicle {
 		numOfVehicles++;
 		return newCar;
 	}
+
 	public void openTrunk() {
 		System.out.println("Trunk Open");
 	}
+
 	public void closeTrunk() {
 		System.out.println("Trunk Closed");
+	}
+
+	void getSpeed() {
+		System.out.println("Speed is at " + speed);
+	}
+
+	void getGasMileage() {
+		System.out.println("The gas mileage is 25 miles per gallon");
+	}
+
+	void getWeight() {
+		System.out.println("Weighs 2000 pounds.");
+		
 	}
 }
