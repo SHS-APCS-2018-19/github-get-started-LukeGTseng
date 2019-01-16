@@ -14,6 +14,10 @@ abstract class Vehicle {
 
 	abstract void getWeight();
 
+	abstract void open();
+	
+	abstract void close();
+	
 	public Vehicle(String licensePlate) {
 		this.licensePlate = licensePlate;
 		list.add(licensePlate);
