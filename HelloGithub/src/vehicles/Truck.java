@@ -13,11 +13,11 @@ public class Truck extends Vehicle {
 		return newTruck;
 	}
 
-	public void openTailgate() {
+	void open() {
 		System.out.println("Tailgate Open");
 	}
 
-	public void closeTailgate() {
+	void close() {
 		System.out.println("Tailgate Closed");
 	}
 
