@@ -13,11 +13,11 @@ public class Car extends Vehicle {
 		return newCar;
 	}
 
-	public void openTrunk() {
+	void open() {
 		System.out.println("Trunk Open");
 	}
 
-	public void closeTrunk() {
+	void close() {
 		System.out.println("Trunk Closed");
 	}
 
