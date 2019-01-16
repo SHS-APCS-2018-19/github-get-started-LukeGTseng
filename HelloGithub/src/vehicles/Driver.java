@@ -24,7 +24,9 @@ public class Driver {
 					+ "Type \"7\" to check current speed of a vehicle\n"
 					+ "Type \"8\" to get the gas milelage of a vehicle\n" 
 					+ "Type \"9\" to get the weight of a vehicle\n"
-					+ "Type \"10\" to list out total number of vehicles");
+					+ "Type \"10\" to open the trunk/tailgate a vehicle\n"
+					+ "Type \"11\" to close the trunk/tailgate a vehicle\n"
+					+ "Type \"12\" to list out total number of vehicles");
 			int num = s.nextInt();
 			if (num == 1) {
 				System.out.println("Do want to create a new car or truck?");
@@ -69,6 +71,24 @@ public class Driver {
 				for (int i = 0; i < totalVehicles.length; i++) {
 					if (selectedVehicle.equals(totalVehicles[i].getPlate())) {
 						totalVehicles[i].stop();
+						vehicleFound = true;
+					}
+				}
+				if (vehicleFound == false) {
+					System.out.println("License Plate not found!!!");
+				}
+			} else if (num == 4) {
+				Boolean vehicleFound = false;
+				System.out.print("Type which vehicle you want to stop: ");
+				for (int i = 0; i < totalVehicles.length; i++) {
+					System.out.print("\n" + totalVehicles[i].getPlate());
+				}
+				System.out.println();
+				Scanner input = new Scanner(System.in);
+				String selectedVehicle = input.nextLine();
+				for (int i = 0; i < totalVehicles.length; i++) {
+					if (selectedVehicle.equals(totalVehicles[i].getPlate())) {
+						totalVehicles[i].turn();
 						vehicleFound = true;
 					}
 				}
@@ -168,6 +188,42 @@ public class Driver {
 					System.out.println("License Plate not found!!!");
 				}
 			} else if (num == 10) {
+				Boolean vehicleFound = false;
+				System.out.print("Type which vehicle you want to open the trunk/tailgate of: ");
+				for (int i = 0; i < totalVehicles.length; i++) {
+					System.out.print("\n" + totalVehicles[i].getPlate());
+				}
+				System.out.println();
+				Scanner input = new Scanner(System.in);
+				String selectedVehicle = input.nextLine();
+				for (int i = 0; i < totalVehicles.length; i++) {
+					if (selectedVehicle.equals(totalVehicles[i].getPlate())) {
+						totalVehicles[i].open();
+						vehicleFound = true;
+					}
+				}
+				if (vehicleFound == false) {
+					System.out.println("License Plate not found!!!");
+				}
+			} else if (num == 11) {
+				Boolean vehicleFound = false;
+				System.out.print("Type which vehicle you want to close the trunk/tailgate of: ");
+				for (int i = 0; i < totalVehicles.length; i++) {
+					System.out.print("\n" + totalVehicles[i].getPlate());
+				}
+				System.out.println();
+				Scanner input = new Scanner(System.in);
+				String selectedVehicle = input.nextLine();
+				for (int i = 0; i < totalVehicles.length; i++) {
+					if (selectedVehicle.equals(totalVehicles[i].getPlate())) {
+						totalVehicles[i].close();
+						vehicleFound = true;
+					}
+				}
+				if (vehicleFound == false) {
+					System.out.println("License Plate not found!!!");
+				}
+			} else if (num == 12) {
 				System.out.println("Number of Vehicles: " +Vehicle.numOfVehicles);
 			}
 
