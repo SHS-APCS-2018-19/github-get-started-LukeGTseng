@@ -15,9 +15,15 @@ public class Employee {
 		JimJPoggers.id = Pog.next();
 		JimJPoggers.name = Pog.next();
 		JimJPoggers.birthday = Pog.next();
-		
 		Scanner skillz = new Scanner(Pog.next()).useDelimiter(",");
-		
+		while(skillz.hasNext()) {
+			JimJPoggers.skills.add(skillz.next());
+		}
+		Scanner projectz = new Scanner(Pog.next()).useDelimiter(",");
+		while(projectz.hasNext()) {
+			JimJPoggers.projects.add(projectz.next());
+		}
+		return JimJPoggers;
 	}
 	
 }
