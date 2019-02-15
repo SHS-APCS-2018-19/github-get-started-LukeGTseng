@@ -11,7 +11,11 @@ public class Exercise_3Names {
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = s.nextLine();
 		}
-		System.out.println(Arrays.toString(selectionSort(arr)));
+		if(input.equals("ascending")) {
+			System.out.println(Arrays.toString(selectionSort(arr)));
+		} else if(input.equals("descending")) {
+			System.out.println(Arrays.toString(xd(arr)));
+		}
 	}
 
 	public static String[] selectionSort(String[] arr) {
@@ -20,6 +24,21 @@ public class Exercise_3Names {
 			int min = i;
 			for (int j = i + 1; j < n; j++) {
 				if (arr[j].compareTo(arr[min]) < 0) {
+					min = j;
+				}
+			}
+			String temp = arr[min];
+			arr[min] = arr[i];
+			arr[i] = temp;
+		}
+		return arr;
+	}
+	public static String[] xd(String[] arr) {
+		int n = arr.length;
+		for (int i = 0; i < n - 1; i++) {
+			int min = i;
+			for (int j = i + 1; j < n; j++) {
+				if (arr[j].compareTo(arr[min]) > 0) {
 					min = j;
 				}
 			}
