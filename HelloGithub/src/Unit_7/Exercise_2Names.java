@@ -25,11 +25,11 @@ public class Exercise_2Names {
 
 		while (min < max) {
 			int mid = (min + max) / 2;
-			if (target.compareTo(list.get(mid))<0) {
+			if (target.compareTo(list.get(mid))>0) {
 				min = mid + 1;
-			} else if (target.compareTo(list.get(mid))>0) {
+			} else if (target.compareTo(list.get(mid))<0) {
 				max = mid - 1;
-			} else if (target.compareTo(list.get(mid))==0) {
+			} else {
 				return mid;
 			}
 		}
