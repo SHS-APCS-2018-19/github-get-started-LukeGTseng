@@ -6,7 +6,7 @@ import java.io.*;
 public class Exercise_3Names {
 	public static void main(String[] args) throws FileNotFoundException {
 		String[] arr = new String[20];
-		File search = new File("C:\\Users\\s-tsengl\\.eclipse\\names.txt");
+		File search = new File("C:\\Users\\s-tsengl\\Documents\\github-get-started-LukeGTseng-master\\HelloGithub\\src\\Unit_7\\names.txt");
 		Scanner s = new Scanner(search);
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = s.nextLine();
