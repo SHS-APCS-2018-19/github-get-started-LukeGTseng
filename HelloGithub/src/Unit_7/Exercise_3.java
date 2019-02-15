@@ -6,7 +6,7 @@ import java.io.*;
 public class Exercise_3 {
 	public static void main(String[] args) throws FileNotFoundException {
 		int[] arr = new int[20];
-		File search = new File("C:\\Users\\s-tsengl\\.eclipse\\numbers.txt");
+		File search = new File("C:\\Users\\s-tsengl\\Documents\\github-get-started-LukeGTseng-master\\HelloGithub\\src\\Unit_7\\numbers.txt");
 		Scanner s = new Scanner(search);
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = s.nextInt();
