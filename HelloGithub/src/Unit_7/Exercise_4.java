@@ -14,25 +14,39 @@ public class Exercise_4 {
 			list.add(s.nextLine());
 		}
 		list.add("Sam");
-		String[] array = new String[list.size()];
-		array = list.toArray(array);
-		insertionSort(array);
-		System.out.println(Arrays.toString(array));
+		String[] xd = new String[list.size()];
+		xd = list.toArray(xd);
+		insertionSort(xd);
+		System.out.println(Arrays.toString(xd));
 	}
 
-	public static void insertionSort(String[] array) {
-		if (array.length == 0) {
-			System.out.println("Array is empty");
-		} else if (array.length == 1) { 
-			System.out.println("There is only 1 element in the array");
+	public static void insertionSort(String[] xd) {
+		if (xd.length == 0) {
+			System.out.println("xd is empty");
+		} else if (xd.length == 1) {
+			
+			System.out.println("There is only 1 element in the xd");
+		} else if (check(xd) == true) {
+			System.out.println("All elements are the same");
 		} else {
-			for (int i = 1; i < array.length; i++) {
-				for (int j = i; j > 0 && array[j].compareTo(array[j - 1])<0; j--) {
-					String temp = array[j];
-					array[j] = array[j - 1];
-					array[j - 1] = temp;
+			for (int i = 1; i < xd.length; i++) {
+				for (int j = i; j > 0 && xd[j].compareTo(xd[j - 1]) < 0; j--) {
+					String temp = xd[j];
+					xd[j] = xd[j - 1];
+					xd[j - 1] = temp;
 				}
 			}
 		}
 	}
+
+	public static boolean check(String[] xd) {
+		for (int i = 1; i < xd.length; i++) {
+			if (!xd[i - 1].equals(xd[i])) {
+				return false;
+			}
+		}
+		return true;
+
+	}
+
 }
