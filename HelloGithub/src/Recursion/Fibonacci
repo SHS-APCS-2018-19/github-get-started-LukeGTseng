@@ -5,7 +5,9 @@ public class Fibonacci {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		int num = s.nextInt();
-		System.out.println(fib(num));
+		for (int i = num; i > 0;i--) {
+			System.out.println(fib(i));
+		}
 	}
 	public static int fib(int n) {
 		if(n == 0) {
