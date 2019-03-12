@@ -1,5 +1,5 @@
 import java.util.*;
-class tuna {
+class main {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		apples[] totalAddresses = null;
@@ -13,7 +13,7 @@ class tuna {
 				totalAddresses = list.toArray(new apples[list.size()]);
 			} else if (num == 2) {
 				if (totalAddresses == null) {
-					System.out.println("You have not created any classes yet!!!");
+					System.out.println("You have not created any addresses yet!!!");
 				} else {
 					for (int i = 0; i < totalAddresses.length; i++) {
 						totalAddresses[i].printAddressFormat(totalAddresses[i]);
@@ -31,9 +31,9 @@ class tuna {
 					}
 					System.out.println();
 					Scanner input = new Scanner(System.in);
-					String selectedClass = input.nextLine();
+					String selectedAddress = input.nextLine();
 					for (int i = 0; i < totalAddresses.length; i++) {
-						if (selectedClass.equals(totalAddresses[i].getName())) {
+						if (selectedAddress.equals(totalAddresses[i].getName())) {
 							totalAddresses[i].printAddressFormat(totalAddresses[i]);
 							addressFound = true;
 						}
