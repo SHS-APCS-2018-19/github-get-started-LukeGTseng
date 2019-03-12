@@ -13,7 +13,7 @@ public class Rectangle implements ShapeInterface{
 	}
 
 	public double perimeter() {
-		return (width*2) + (height*2);
+		return (width + height)*2;
 	}
 
 }
