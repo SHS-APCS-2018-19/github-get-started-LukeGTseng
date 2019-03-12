@@ -47,9 +47,9 @@ public class Exercise_1 {
 	public static void sort(int arr[], int left, int right) {
 		if (left < right) {
 			int middle = (left + right) / 2;
-			sort(arr, left, m);
-			sort(arr, m + left, right);
-			merge(arr, left, m, right);
+			sort(arr, left, middle);
+			sort(arr, middle + left, right);
+			merge(arr, left, middle, right);
 		}
 	}
 }
