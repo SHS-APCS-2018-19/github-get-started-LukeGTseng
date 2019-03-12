@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class apples {
+public class address {
 	private String name;
 	private String address;
 	private String city;
